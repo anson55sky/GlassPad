@@ -1,3 +1,5 @@
+![GlassPad](assets/social-preview.png)
+
 # GlassPad
 
 macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持无限屏画布、实时桌面壁纸捕获、自定义模糊与材质滑杆。
