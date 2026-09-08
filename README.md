@@ -6,7 +6,8 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 
 ## 下载 / Download
 
-- **最新内测版 DMG：** [GlassPad v1.0.121](https://github.com/anson55sky/GlassPad-releases/releases/download/v1.0.121/GlassPad-1.0.121.dmg)
+- **官方站点（下载 / 更新日志 / Pro 激活验证）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
+- **最新内测版 DMG：** [GlassPad v1.0.124](https://github.com/anson55sky/GlassPad-releases/releases/download/v1.0.124/GlassPad-1.0.124.dmg)
 - 所有版本见 [Releases](https://github.com/anson55sky/GlassPad-releases/releases)
 
 ## 安装 / Install
