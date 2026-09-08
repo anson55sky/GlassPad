@@ -7,7 +7,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志 / Pro 激活验证）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **最新内测版 DMG：** [GlassPad v1.0.124](https://github.com/anson55sky/GlassPad-releases/releases/download/v1.0.124/GlassPad-1.0.124.dmg)
+- **最新内测版：v1.0.129** —— 请通过[官网报名](https://glasspad.pocketbay.app/)获取专属内测密钥与下载链接；本仓库已转为**私有**，Release 附件仅作版本存档，不作为公开下载入口。
 - 所有版本见 [Releases](https://github.com/anson55sky/GlassPad-releases/releases)
 
 ## 安装 / Install
@@ -19,14 +19,16 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 
 ## 自动更新 / Auto-update
 
-内置更新检查，读取本仓库 Release；可在设置中手动「检查更新」。
+- **内测分发版（1.0.129+）**：读取官网私有更新源 `glasspad.pocketbay.app/api/beta/update`，新版本推送不依赖本仓库。
+- 也可在设置中手动「检查更新」。
 
 ## 许可与发布策略 / License & Distribution
 
 - 当前为 **内测版（Open Beta）**，**全部功能免费**。
 - 后续将进入「试用期 + 激活」阶段（详见源码库 README）。
-- **源码**位于私有库 [`anson55sky/GlassPad`](https://github.com/anson55sky/GlassPad)（不公开）；本仓库仅用于**发布、下载与自动更新源**。
+- **源码**位于私有库 [`anson55sky/GlassPad`](https://github.com/anson55sky/GlassPad)（不公开）；本仓库仅用于**版本存档**，下载与更新已收敛到官网。
 
 ## 反馈 / Feedback
 
-通过本仓库 Issues 反馈问题或建议。
+- 内测用户：App 内 **设置 → 关于 → 提交反馈**（自动附带密钥）。
+- 也可通过本仓库 Issues 反馈问题或建议。
