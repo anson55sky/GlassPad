@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **Releases（本仓库）：[GlassPad-1.0.306.dmg](https://github.com/anson55sky/GlassPad/releases/tag/v1.0.306)**
+- **Releases（本仓库）：[GlassPad-1.0.307.dmg](https://github.com/anson55sky/GlassPad/releases/tag/v1.0.307)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## ⚠️ 开始前请先做一步（macOS 27 必读）
@@ -36,6 +36,11 @@ macOS 27 的四指捏合由**系统手势引擎直接接管，程序无法从内
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.307 · 移除残留自愈
+
+- 移除 1.0.306 后残留的 `cleanupLegacyWrites` 自愈 —— 它把用户在系统设置里手动关闭的四指手势判作旧版本残留并删掉，悄悄恢复系统手势。
+- GlassPad 此后永远「不写入、不删除」你的系统偏好，只读探测 + 状态栏直达系统设置。
 
 ### v1.0.306 · 手势冲突根治
 
