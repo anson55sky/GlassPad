@@ -27,6 +27,12 @@ macOS 27 的四指捏合由**系统手势引擎直接接管，程序无法从内
 
 > GlassPad **从不写入你的任何系统偏好**。状态栏图标右键菜单里有「**关闭系统四指手势（打开系统设置）**」，点一下可直接跳到该页面。
 
+**截图示意：**
+
+| 关闭后（推荐） | 打开时（会冲突） |
+|---|---|
+| ![关闭后](https://raw.githubusercontent.com/anson55sky/GlassPad/main/assets/setup/gestures-off.png) | ![打开时](https://raw.githubusercontent.com/anson55sky/GlassPad/main/assets/setup/gestures-on.png) |
+
 ## 安装 / Install
 
 1. 下载 `.dmg`，将 **GlassPad** 拖入「应用程序」。
