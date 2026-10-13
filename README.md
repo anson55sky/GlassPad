@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **Releases（本仓库）：[GlassPad-1.0.307.dmg](https://github.com/anson55sky/GlassPad/releases/tag/v1.0.307)**
+- **Releases（本仓库）：[GlassPad-1.0.308.dmg](https://github.com/anson55sky/GlassPad/releases/tag/v1.0.308)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## ⚠️ 开始前请先做一步（macOS 27 必读）
@@ -42,6 +42,17 @@ macOS 27 的四指捏合由**系统手势引擎直接接管，程序无法从内
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.308 · 辅助功能权限根治 + 手势误唤醒修复
+
+- **辅助功能权限在每次更新后都会失效**（根因修复）。原因是 ad-hoc 签名的
+  designated requirement 建在代码哈希上，而每次重新编译哈希都变，系统据此
+  认定「这是一个新程序」而作废既有授权。表现为：更新后四指手势接管静默失效。
+  现在签名锚定 bundle 标识，**授权跨更新不再丢失**。
+- **拇指先下再三指捏合不再误唤醒**：对齐 Buho —— 只有四指同时捏合才触发。
+- 文件夹开合帧率 38.6 → 63 fps；点击到起跳 72.1 → 20.5 ms；首次召唤 717 → 459 ms。
+- 修复刘海遮挡下文件夹名称被裁掉的问题。
+- 已知未解决：文件夹底板玻璃在「设置」窗口打开时会消失（原生玻璃跟随窗口焦点）。
 
 ### v1.0.307 · 移除残留自愈
 
