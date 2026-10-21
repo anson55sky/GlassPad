@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **Releases（本仓库）：[GlassPad-1.0.420.dmg](https://github.com/anson55sky/GlassPad/releases/tag/v1.0.420)**
+- **Releases（本仓库）：[GlassPad-1.0.448.dmg](https://github.com/anson55sky/GlassPad/releases/tag/v1.0.448)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## ⚠️ 开始前请先做一步（macOS 27 必读）
@@ -42,6 +42,14 @@ macOS 27 的四指捏合由**系统手势引擎直接接管，程序无法从内
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.448 · Safari 回归 + 文件夹居中 + 开合流畅度 + 捏合跟手 `[REQUIRED]`
+
+- **Safari 回归**：新版 macOS 的 `/Applications/Safari.app` 是指向 `/System/Cryptexes/...` 的符号链接，且带 hidden 文件系统标记；旧扫描器把隐藏项整体跳过，Safari 从网格、搜索、文件夹一起消失。现在隐藏的 `.app` 照常收录，图标解析真实目标，「替身」小箭头角标一并移除（Safari 位于「其他」文件夹内）。
+- **文件夹开合**：动画回归 BUHO 逐帧实测曲线（267ms、无过冲）；修复预热快照管线自上线以来从未生效的解析 bug —— 全部文件夹 × 各页真正预热，morph 走预渲染位图刚体变换（~60fps 档），落定位零重建。
+- **面板位置**：所有文件夹统一在「刘海下缘 ↔ Dock 上缘」垂直居中（标题块计入居中），不再「标题挤刘海、底部留白」；展开起点仍是被点图标。
+- **四指捏合**：跟随弹簧 response 0.16 → 0.10s（快速捏合滞后 ~100ms → ~60ms）；上一捏沉降窗内的同方向新手势从「整体丢弃」改为「接管续跟」，快速连续开合不再偶发无响应。
+- **系统健壮性**：修复 SIGTERM 处理缺失 `exit(0)` 导致 `killall` 杀不死、多实例并存（双份手势监听互抢 + 布局文件竞写）；扫描 / reconcile / 布局落盘新增诊断日志。
 
 ### v1.0.420 · 多选整组拖拽 + 贪食蛇队列 + 性能大修 `[REQUIRED]`
 
