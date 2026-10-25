@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **最新版（本仓库）：[GlassPad-1.0.507.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.507/GlassPad-1.0.507.dmg)**
+- **最新版（本仓库）：[GlassPad-1.0.530.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.530/GlassPad-1.0.530.dmg)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## 关于四指手势（无需额外设置）
@@ -31,6 +31,16 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.530 · 图标格式 / 尺寸统一 + 跨页拖拽根治 `[REQUIRED]`
+
+- **Dock / 启动台图标恢复正确**：macOS 26 对只声明 `CFBundleIconFile`（legacy `.icns`）的应用会套一层灰色圆角底板 —— 这是「四方格」的真正原因，换多少次图片都没用。现已提供编译好的 `Assets.car` + `CFBundleIconName`，系统按满版应用图标渲染。
+- **图标尺寸统一**：改回系统合成图标优先（所有应用恒 0.84 视觉尺寸），本 App 因纯色满版按 0.82 光学对齐邻居；图标缓存分辨率 128 → **256px**，Retina 下不再发虚。
+- **跨页拖拽**：落子改为「页内紧凑、页边界不动」，跨页固定落到目标页第一个空格；删除应用 / 拖入文件夹等**所有移除路径**改为原地留洞 —— 第二页的图标不再被吸回第一页最后一格。
+- **文件夹拖出**：落点改用提交后的真实格位，消除「先到最近格、再闪现到跟随位置」。
+- **图标可复现**：新增 `Scripts/make-icon.sh`，一条命令从源图重新生成 `icns` + `Assets.car`。
+
+> Dock 若仍显示旧图标，执行一次：`defaults delete com.apple.dock recent-apps && killall Dock`
 
 ### v1.0.507 · 文件夹图标一键满屏 + 组拖残影修复 + 经典布局 `[REQUIRED]`
 
