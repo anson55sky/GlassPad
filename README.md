@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **最新版（本仓库）：[GlassPad-1.0.530.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.530/GlassPad-1.0.530.dmg)**
+- **最新版（本仓库）：[GlassPad-1.0.531.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.531/GlassPad-1.0.531.dmg)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## 关于四指手势（无需额外设置）
@@ -31,6 +31,12 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.531 · 跨页拖拽恢复文件夹目标识别 `[REQUIRED]`
+
+- **第二页的图标拖不进第一页文件夹**：v1.0.516 为「跨页落点固定第一格」在拖拽处理最前面加了按页判定的提前返回，跨页必然命中，后续悬停 / 文件夹目标识别全被跳过。现改为**只钉洞口、不再提前返回**。
+- **多选整组跨页进文件夹**：同一根因，组拖含第二页成员时一并修复。
+- 同页拖拽行为完全不变；跨页落点仍在第一个空格。
 
 ### v1.0.530 · 图标格式 / 尺寸统一 + 跨页拖拽根治 `[REQUIRED]`
 
