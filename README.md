@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **最新版（本仓库）：[GlassPad-1.0.531.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.531/GlassPad-1.0.531.dmg)**
+- **最新版（本仓库）：[GlassPad-1.0.532.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.532/GlassPad-1.0.532.dmg)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## 关于四指手势（无需额外设置）
@@ -31,6 +31,12 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.532 · 新装应用图标不再显示成通用模板 `[REQUIRED]`
+
+- **新安装的应用显示白底网格图标**：LaunchServices / IconServices 索引完成前，`NSWorkspace` 返回的是系统「通用应用」模板，而原来的兜底判断只认「禁止符」，认不出模板 —— 它被当成有效图标缓存下来，此后一直命中。
+- 现在比对**系统图标与 bundle 自带图标**的 24×24 指纹（正常应用 12~30，模板 72），超阈值即改从 bundle 直读，且不缓存模板图。图标缓存代次升到 **v9**，旧条目全部重建。
+- 同页拖拽 / 跨页落点 / 跨页进文件夹行为逐字未变。
 
 ### v1.0.531 · 跨页拖拽恢复文件夹目标识别 `[REQUIRED]`
 
