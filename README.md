@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **最新版（本仓库）：[GlassPad-1.0.532.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.532/GlassPad-1.0.532.dmg)**
+- **最新版（本仓库）：[GlassPad-1.0.536.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.536/GlassPad-1.0.536.dmg)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## 关于四指手势（无需额外设置）
@@ -31,6 +31,12 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.536 · 图标判定修正 + 换布局落位不再掉帧 `[REQUIRED]`
+
+- **修复 1.0.532 的「方角图标」**：那一版用「系统图标 vs bundle 图标内容差」直接替换成 bundle 原图，误伤了 OmniRoute / CuaDriver / MultiPost 等全幅绘制的正常应用（方角、偏大）。现在只**刷新 IconServices 缓存重取**（改 bundle mtime → 再取系统图标），不替换视觉。
+- **新装应用显示通用模板**：同一机制解决。模板用「空 .app」探针判定 —— 142 个应用里正常图标与模板距离最低 13.71，真模板 7.83，阈值 11。缓存代次 v11。
+- **切换场景后落位卡顿**：整页替换期间抑制逐格位移动画（30~40 个格子同时跑弹簧会掉帧），并补一层整页 **0.12s 淡入**；拖拽 / 翻页 / 文件夹开合动画不变。
 
 ### v1.0.532 · 新装应用图标不再显示成通用模板 `[REQUIRED]`
 
