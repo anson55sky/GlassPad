@@ -9,7 +9,7 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 ## 下载 / Download
 
 - **官方站点（下载 / 更新日志）：[glasspad.pocketbay.app](https://glasspad.pocketbay.app/)**
-- **最新版（本仓库）：[GlassPad-1.0.536.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.536/GlassPad-1.0.536.dmg)**
+- **最新版（本仓库）：[GlassPad-1.0.538.dmg](https://github.com/anson55sky/GlassPad/releases/download/v1.0.538/GlassPad-1.0.538.dmg)**
 - 所有历史版本见 [Releases](https://github.com/anson55sky/GlassPad/releases)
 
 ## 关于四指手势（无需额外设置）
@@ -31,6 +31,11 @@ macOS 原生 Launchpad 替代工具，采用 Liquid Glass 美学，全面支持�
 4. **壁纸权限说明**：静态图片壁纸无需任何权限；动态/Aerials 壁纸的高保真实时捕获可能需要「完全磁盘访问」，未授权时自动降级为系统资源，不会空白。
 
 ## 更新日志 / Changelog
+
+### v1.0.538 · 修复新装应用图标显示成禁止符号 `[REQUIRED]`
+
+- **根因**：系统取不到图标时返回两种占位——白文档（1.0.533 已识别）和**禁止符号**（本机实测 29183 字节，新安装/未索引的应用最常见）。1.0.533 漏判禁止符号，导致它被当成真图标写进磁盘缓存**永久复用**，表现为"每次新装应用都显示禁止符号"。
+- **修复**：占位判定扩展到"白文档 + 禁止符号"；命中占位**绝不落盘**，退回 bundle 直读（bundle 图标资源装完即在磁盘上，立刻拿到真图标）；缓存代次 v11 → v12 使已缓存的坏图失效。
 
 ### v1.0.536 · 图标判定修正 + 换布局落位不再掉帧 `[REQUIRED]`
 
